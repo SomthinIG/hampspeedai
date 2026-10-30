@@ -249,29 +249,8 @@
     </div>
 </div>
 
-<script>
-  // Opens the given URL in a new tab
-  function downloadModelWebsite(url) {
-    const newTab = window.open(url, '_blank', 'noopener,noreferrer');
-
-    // Fallback if a popup blocker stopped it
-    if (!newTab) {
-      window.location.href = url;
-    }
-  }
-
-  // Fades the card in and makes it clickable
-  function revealModelCard() {
-    const card = document.getElementById('model-unveil-card');
-    if (!card) return;
-    card.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
-  }
-
-  // Reveal on page load (call revealModelCard() elsewhere if you want a different trigger)
-  window.addEventListener('DOMContentLoaded', () => {
-    requestAnimationFrame(revealModelCard);
-  });
-</script>
+        </div>
+    </section>
 
     <!-- =================================================================== -->
     <!-- TRAINING DATA BENTO GRID SECTION                                   -->
@@ -694,6 +673,14 @@
         window.addEventListener('resize', handleScrollAnimation);
         // Initial call
         handleScrollAnimation();
+
+        // Opens the given URL in a new tab
+        function downloadModelWebsite(url) {
+            const newTab = window.open(url, '_blank', 'noopener,noreferrer');
+            if (!newTab) {
+                window.location.href = url;
+            }
+        }
 
         // Custom Notification Function
         function downloadModelAlert() {
